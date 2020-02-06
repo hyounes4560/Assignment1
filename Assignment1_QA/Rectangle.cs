@@ -6,22 +6,25 @@ using System.Threading.Tasks;
 
 namespace Assignment1_QA
 {
-    class Rectangle
+    public class Rectangle
     {
 
+        //two private rectangle attributes
         private int length;
         private int width;
 
         //public int Length { get => length; set => length = value; }
         //public int Width { get => width; set => width = value; }
 
+
+        //default constructor
         public Rectangle() {
 
             this.length = 1;
-
             this.width = 1;
         }
 
+        //non-default constructor
         public Rectangle(int lengthInput, int widthInput)
         {
 
@@ -34,8 +37,7 @@ namespace Assignment1_QA
         {
 
             return this.length; 
-
-
+            
         }
         public int SetLength(int length)
         {
