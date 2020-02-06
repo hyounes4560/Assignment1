@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Assignment1_QA
 {
-    class Program
+    class Rectangle
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
