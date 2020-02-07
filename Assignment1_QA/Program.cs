@@ -26,29 +26,30 @@ namespace Assignment1_QA
             try
             {
                 //Accepting only positive integers for length & width 
-               do
-                    {
+                do
+                {
 
-                        Console.WriteLine("Please enter the length of the rectangle");
-                        lengthString = Console.ReadLine();                                             
+                    Console.WriteLine("Please enter the length of the rectangle");
+                    lengthString = Console.ReadLine();
 
-                    } while ((!int.TryParse(lengthString, out length) || length < 1));
+                } while ((!int.TryParse(lengthString, out length) || length < 1));
 
-                    
-                    do
-                    {
 
-                        Console.WriteLine("Please enter the width of the rectangle");
-                        widthString = Console.ReadLine();
+                do
+                {
 
-                    } while ((!int.TryParse(widthString, out width) || width < 1));
+                    Console.WriteLine("Please enter the width of the rectangle");
+                    widthString = Console.ReadLine();
+
+                } while ((!int.TryParse(widthString, out width) || width < 1));
 
 
 
                 do
                 {
 
-                    do {
+                    do
+                    {
                         Console.WriteLine("\nChoose one option for the following menu:");
                         Console.WriteLine("1.Get Rectangle Length\n" +
                                             "2.Change Rectangle Length\n" +
@@ -61,41 +62,35 @@ namespace Assignment1_QA
                         option = Console.ReadLine();
 
                     } while (!int.TryParse(option, out int userOption) || (userOption < 1 || userOption > 7));
-                    
+
                     //to keep showing the main menu 
-                    flag = true;                    
+                    flag = true;
 
                     switch (option)
                     {
                         case "1":
 
                             Console.WriteLine("The length is " + rectangle.GetLength());
-                            Console.ReadLine();
                             break;
 
                         case "2":
                             Console.WriteLine("The new length is " + rectangle.SetLength(length));
-                            Console.ReadLine();
                             break;
 
                         case "3":
                             Console.WriteLine("The width is " + rectangle.GetWidth());
-                            Console.ReadLine();
                             break;
 
                         case "4":
                             Console.WriteLine("The new width is " + rectangle.SetWidth(width));
-                            Console.ReadLine();
                             break;
 
                         case "5":
                             Console.WriteLine("The Rectangle Perimete is " + rectangle.GetPerimeter());
-                            Console.ReadLine();
                             break;
 
                         case "6":
                             Console.WriteLine("The Rectangle Area is " + rectangle.GetArea());
-                            Console.ReadLine();
                             break;
 
                         case "7":
@@ -104,7 +99,7 @@ namespace Assignment1_QA
                             //to stop showing the main menu and exit the application
                             flag = false;
                             break;
-                            
+
                         default:
                             Console.WriteLine("Something went wrong");
                             break;
@@ -113,17 +108,18 @@ namespace Assignment1_QA
                 } while (flag);
 
 
-            } catch (Exception)
-                {
-                    
-                    Console.WriteLine("Something went wrong");
-                    Console.ReadLine();
+            }
+            catch (Exception)
+            {
 
-                }
+                Console.WriteLine("Something went wrong");
+                Console.ReadKey();
 
-           
+            }
+
+
 
         }
-        
+
     }
 }

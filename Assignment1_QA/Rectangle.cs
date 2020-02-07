@@ -39,10 +39,10 @@ namespace Assignment1_QA
             return this.length; 
             
         }
-        public int SetLength(int length)
+        public int SetLength(int lengthInput)
         {
 
-            this.length = length;
+            this.length =lengthInput;
             return length; 
 
         }
@@ -51,9 +51,9 @@ namespace Assignment1_QA
             return this.width;
 
         }
-        public int SetWidth(int width)
+        public int SetWidth(int widthInput)
         {
-            this.width = width;
+            this.width = widthInput;
             return width; 
 
 
