@@ -13,64 +13,117 @@ namespace Assignment1_QA
         {
             int length;
             int width;
-            bool flag = false;
-            
+            string option;
+            string lengthString;
+            string widthString;
+            bool flag;
+
+
+            //Rectangle Object
+            Rectangle rectangle = new Rectangle();
 
 
             try
             {
+                //Accepting only positive integers for length & width 
+               do
+                    {
+
+                        Console.WriteLine("Please enter the length of the rectangle");
+                        lengthString = Console.ReadLine();                                             
+
+                    } while ((!int.TryParse(lengthString, out length) || length < 1));
+
+                    
+                    do
+                    {
+
+                        Console.WriteLine("Please enter the width of the rectangle");
+                        widthString = Console.ReadLine();
+
+                    } while ((!int.TryParse(widthString, out width) || width < 1));
+
+
 
                 do
                 {
 
+                    do {
+                        Console.WriteLine("\nChoose one option for the following menu:");
+                        Console.WriteLine("1.Get Rectangle Length\n" +
+                                            "2.Change Rectangle Length\n" +
+                                            "3.Get Rectangle Width\n" +
+                                            "4.Change Rectangle Width\n" +
+                                            "5.Get Rectangle Perimeter\n" +
+                                            "6.Get Rectangle Area\n" +
+                                            "7.Exit\n");
 
+                        option = Console.ReadLine();
 
-                    Console.WriteLine("Enter the length of the rectangle");
-                    length = int.Parse(Console.ReadLine());
+                    } while (!int.TryParse(option, out int userOption) || (userOption < 1 || userOption > 7));
+                    
+                    //to keep showing the main menu 
+                    flag = true;                    
 
-                    Console.WriteLine("Enter the width of the rectangle");
-                    width= int.Parse(Console.ReadLine());
-
-
-                    if (length > 0 && width > 0)
+                    switch (option)
                     {
+                        case "1":
 
+                            Console.WriteLine("The length is " + rectangle.GetLength());
+                            Console.ReadLine();
+                            break;
 
-                        Rectangle rectangle = new Rectangle();
+                        case "2":
+                            Console.WriteLine("The new length is " + rectangle.SetLength(length));
+                            Console.ReadLine();
+                            break;
 
-                        Console.WriteLine("The length is " +rectangle.SetLength(length));
-                        Console.WriteLine("The width is " +rectangle.SetWidth(width));
+                        case "3":
+                            Console.WriteLine("The width is " + rectangle.GetWidth());
+                            Console.ReadLine();
+                            break;
 
+                        case "4":
+                            Console.WriteLine("The new width is " + rectangle.SetWidth(width));
+                            Console.ReadLine();
+                            break;
 
-                        Console.WriteLine("The Perimeter is " +rectangle.GetPerimeter());
-                        Console.WriteLine("The area is "  +rectangle.GetArea());
+                        case "5":
+                            Console.WriteLine("The Rectangle Perimete is " + rectangle.GetPerimeter());
+                            Console.ReadLine();
+                            break;
 
+                        case "6":
+                            Console.WriteLine("The Rectangle Area is " + rectangle.GetArea());
+                            Console.ReadLine();
+                            break;
 
+                        case "7":
+                            Console.WriteLine("Sorry to see you leave! GoodBye....");
+
+                            //to stop showing the main menu and exit the application
+                            flag = false;
+                            break;
+                            
+                        default:
+                            Console.WriteLine("Something went wrong");
+                            break;
 
                     }
-
-                    else {
-
-                        Console.WriteLine("The input is less than zero"); 
-                        flag = true; 
-                    }
-
-
-
                 } while (flag);
 
 
+            } catch (Exception)
+                {
+                    
+                    Console.WriteLine("Something went wrong");
+                    Console.ReadLine();
 
-            } catch
-            {
+                }
 
-                throw new Exception("Only Intger Numbers");
-
-            }
-
-            
-
+           
 
         }
+        
     }
 }

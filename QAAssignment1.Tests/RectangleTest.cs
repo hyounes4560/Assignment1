@@ -13,7 +13,7 @@ namespace QAAssignment1.Tests
     class RectangleTest 
     {
 
-        private Rectangle rect;
+        private Rectangle rectangle;
             
 
             [SetUp]
